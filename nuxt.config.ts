@@ -11,5 +11,9 @@ export default defineNuxtConfig({
   },
   typescript: {
     shim: false
-  }
+  },
+  auth: {
+    enableGlobalAppMiddleware: true,
+    origin: process.env.NEXTAUTH_URL
+  },
 })
