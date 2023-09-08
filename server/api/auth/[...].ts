@@ -1,5 +1,4 @@
 import CredentialsProvider from 'next-auth/providers/credentials'
-import GithubProvider from 'next-auth/providers/github'
 import { NuxtAuthHandler } from '#auth'
 
 export default NuxtAuthHandler({
@@ -17,8 +16,8 @@ export default NuxtAuthHandler({
       // e.g. domain, username, password, 2FA token, etc.
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
-        username: { label: 'Username', type: 'text', placeholder: '(hint: jsmith)' },
-        password: { label: 'Password', type: 'password', placeholder: '(hint: hunter2)' }
+        username: { label: 'Username', type: 'text', placeholder: '(Tipp: jonas)' },
+        password: { label: 'Password', type: 'password', placeholder: '(Tipp: karl)' }
       },
       authorize (credentials: any) {
         console.warn('ATTENTION: You should replace this with your real providers or credential provider logic! The current setup is not safe')
@@ -27,7 +26,7 @@ export default NuxtAuthHandler({
         // that is false/null if the credentials are invalid.
         // NOTE: THE BELOW LOGIC IS NOT SAFE OR PROPER FOR AUTHENTICATION!
 
-        const user = { id: '1', name: 'J Smith', username: 'jsmith', password: 'hunter2' }
+        const user = { id: '1', name: 'Jonas Karl', username: 'jonas', password: 'karl' }
 
         if (credentials?.username === user.username && credentials?.password === user.password) {
           // Any object returned will be saved in `user` property of the JWT
