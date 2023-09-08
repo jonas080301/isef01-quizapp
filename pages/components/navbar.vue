@@ -7,7 +7,7 @@ const {
 </script>
 
 <template>
-    <div class="bg-indigo-600">
+    <div v-if="data" class="bg-indigo-600">
       <nav
         class="
           container
