@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   modules: [
     '@sidebase/nuxt-auth',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
   ],
   build: {
     transpile: [
@@ -16,4 +16,5 @@ export default defineNuxtConfig({
     enableGlobalAppMiddleware: true,
     origin: process.env.NEXTAUTH_URL
   },
+
 })
