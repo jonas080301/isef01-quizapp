@@ -16,7 +16,7 @@ import { ref, onMounted } from 'vue';
   const selectedMajor = ref({id: null, name: "Bitte wählen..."});
 
   const url = computed(() => `/api/getSubjects?major=${selectedMajor.value.id}`);
-  const { data: subjects } = await useFetch(url)
+  const { data: subjects }: any = await useFetch(url)
 
   const selectedSubject = ref({id: null, name: "Bitte wählen..."});
   
