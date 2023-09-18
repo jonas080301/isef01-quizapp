@@ -50,14 +50,14 @@ import { ref, onMounted } from 'vue';
         <div class="min-h-full flex flex-col justify-center">
           <div class="grid grid-cols-1 gap-4 md:gap-4 md:grid-cols-2">
             <Answer
-              v-for="(answer, key) in question?.possibilities"
+              v-for="(answer, id) in question?.possibilities"
               :key="answer"
               :text="answer"
               :is-right-answer="
-                key == question?.correct
+                id == question?.correct
               "
               :is-wrong-answer="
-                !(key == question?.correct)
+                !(id == question?.correct)
               "
               :show-answer="showAnswer"
               @click="showAnswer = true;"

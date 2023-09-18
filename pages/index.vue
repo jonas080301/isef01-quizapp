@@ -28,12 +28,12 @@ import navbar from './components/navbar.vue';
         </button>
       </div>
       <div class="text-center basis-1/3 p-6 w-full">
-        <NuxtLink to="/startQuiz">
+        <a href="/startQuiz">
           <button class="flex items-center p-6 text-purple-100 rounded bg-gradient-to-r from-indigo-300 to-indigo-500 justify-center w-full">
             <img src="/assets/lesen_icon.png" class="mr-3 h-14" alt="Create Icon" />
             <p class="text-white text-3xl font-bold">Lerne Solo</p>
           </button>
-        </NuxtLink>
+        </a>
       </div>
     </div>
   </div>
