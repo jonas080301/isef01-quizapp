@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   modules: [
     '@sidebase/nuxt-auth',
-    '@nuxtjs/tailwindcss',
+    '@nuxtjs/tailwindcss'
   ],
   build: {
     transpile: [
@@ -15,6 +15,13 @@ export default defineNuxtConfig({
   auth: {
     enableGlobalAppMiddleware: true,
     origin: process.env.NEXTAUTH_URL
+
   },
+  runtimeConfig: {
+    mongoUrl: process.env.MONGO_URL
+  },
+  nitro: {
+    plugins: ['~/server/index.ts']
+  }
 
 })
