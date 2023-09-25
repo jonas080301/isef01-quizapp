@@ -1,35 +1,38 @@
 <script setup lang="ts">
 
-import navbar from './components/navbar.vue';
-import { ref, onMounted } from 'vue';
-  import {
-    Listbox,
-    ListboxButton,
-    ListboxLabel,
-    ListboxOption,
-    ListboxOptions,
-    //@ts-ignore
-  } from '@headlessui/vue';
+import { ref, onMounted } from 'vue'
+import {
+  Listbox,
+  ListboxButton,
+  ListboxLabel,
+  ListboxOption,
+  ListboxOptions
+  // @ts-ignore
+} from '@headlessui/vue'
+import navbar from './components/navbar.vue'
 
+const { data: majors } = useFetch('/api/majors')
 
-  const { data: majors } = useFetch('/api/getMajors')
-  const selectedMajor = ref({id: null, name: "Bitte wählen..."});
+const selectedMajor = ref({ majorID: null, name: 'Bitte wählen...' })
 
-  const url = computed(() => `/api/getSubjects?major=${selectedMajor.value.id}`);
-  const { data: subjects }: any = await useFetch(url)
+const url = computed(() => `/api/subjects?majorID=${selectedMajor.value.majorID}`)
 
-  const selectedSubject = ref({id: null, name: "Bitte wählen..."});
-  
-  
-  const startQuiz = () => {
+const { data: subjects }: any = await useFetch(url)
 
-  };
+const selectedSubject = ref({ subjectID: null, name: 'Bitte wählen...' })
+
+const startQuiz = () => {
+
+}
+
 </script>
 
 <template>
-    <navbar></navbar>
+  <div>
+    <navbar />
+
     <div class="w-11/12 mx-auto grid grid-cols-1 gap-y-8 lg:w-5/12 pt-10">
-      <Listbox as="div" v-model="selectedMajor">
+      <Listbox v-model="selectedMajor" as="div">
         <ListboxLabel class="block text-sm font-medium text-gray-700">
           Wähle deinen Studiengang
         </ListboxLabel>
@@ -44,10 +47,9 @@ import { ref, onMounted } from 'vue';
             </span>
             <span
               class="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
-            >
-            </span>
+            />
           </ListboxButton>
-  
+
           <transition
             leave-active-class="transition ease-in duration-100"
             leave-from-class="opacity-100"
@@ -57,11 +59,11 @@ import { ref, onMounted } from 'vue';
               class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
             >
               <ListboxOption
-                as="template"
                 v-for="major in majors"
-                :key="major.id"
-                :value="major"
+                :key="major.majorID"
                 v-slot="{ active, selectedMajor }"
+                as="template"
+                :value="major"
               >
                 <li
                   :class="[
@@ -79,23 +81,22 @@ import { ref, onMounted } from 'vue';
                       {{ major.name }}
                     </span>
                   </div>
-  
+
                   <span
                     v-if="selectedMajor"
                     :class="[
                       active ? 'text-white' : 'text-indigo-600',
                       'absolute inset-y-0 right-0 flex items-center pr-4',
                     ]"
-                  >
-                  </span>
+                  />
                 </li>
               </ListboxOption>
             </ListboxOptions>
           </transition>
         </div>
       </Listbox>
-  
-      <Listbox as="div" v-model="selectedSubject">
+
+      <Listbox v-model="selectedSubject" as="div">
         <ListboxLabel class="block text-sm font-medium text-gray-700">
           Wähle einen Themenbereich
         </ListboxLabel>
@@ -108,10 +109,9 @@ import { ref, onMounted } from 'vue';
             </span>
             <span
               class="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
-            >
-            </span>
+            />
           </ListboxButton>
-  
+
           <transition
             leave-active-class="transition ease-in duration-100"
             leave-from-class="opacity-100"
@@ -121,11 +121,11 @@ import { ref, onMounted } from 'vue';
               class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
             >
               <ListboxOption
-                as="template"
                 v-for="subject in subjects"
                 :key="subject.id"
-                :value="subject"
                 v-slot="{ active, selectedSubject }"
+                as="template"
+                :value="subject"
               >
                 <li
                   :class="[
@@ -143,16 +143,14 @@ import { ref, onMounted } from 'vue';
                       {{ subject.name }}
                     </span>
                   </div>
-  
+
                   <span
                     v-if="selectedSubject"
                     :class="[
                       active ? 'text-white' : 'text-indigo-600',
                       'absolute inset-y-0 right-0 flex items-center pr-4',
                     ]"
-                  >
-
-                  </span>
+                  />
                 </li>
               </ListboxOption>
             </ListboxOptions>
@@ -161,13 +159,12 @@ import { ref, onMounted } from 'vue';
       </Listbox>
       <NuxtLink to="/showQuestion">
         <button
-        class="px-12 py-4 bg-gray-600 text-white text-lg rounded-lg hover:bg-gray-700 transition w-full"
-´
-      >
-        Los gehts!
-      </button>
+          class="px-12 py-4 bg-gray-600 text-white text-lg rounded-lg hover:bg-gray-700 transition w-full"
+          @click="startQuiz"
+        >
+          Los gehts!
+        </button>
       </NuxtLink>
-
     </div>
-  </template>
-  
+  </div>
+</template>
