@@ -13,7 +13,7 @@ import navbar from './components/navbar.vue'
 
 const { data: majors } : any = useFetch('/api/majors')
 
-const selectedMajor = ref({ majorID: null, name: 'Bitte wählen...' })
+const selectedMajor = ref({ majorID: "0", name: 'Bitte wählen...' })
 
 const url = computed(() => `/api/subjects?majorID=${selectedMajor.value.majorID}`)
 
