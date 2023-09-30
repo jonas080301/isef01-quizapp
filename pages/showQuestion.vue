@@ -5,24 +5,47 @@ import navbar from './components/navbar.vue';
 import Answer from './components/answer.vue';
 import { ref, onMounted } from 'vue';
 
+const subject = useSubject()
 
+const { data: q }: any = await useFetch('/api/questions?subject='+subject.value)
 
-  const { data: question } = useFetch('/api/getQuestion')
-  const showAnswer = useShowAnswer()
+const question:any = ref(q.value ? q.value[0] : null)
+
+const showAnswer = useShowAnswer()
 //   const selectedMajor = ref({id: null, name: "Bitte wählen..."});
 
 //   const url = computed(() => `/api/getSubjects?major=${selectedMajor.value.id}`);
 //   const { data: subjects } = await useFetch(url)
+const nextQuestion = async function(){
+  let newQuestion:any = await useFetch('/api/questions?subject='+subject.value)
 
-  
+  if(question.value.question == newQuestion.data.value[0].question){
+
+    nextQuestion()
+  }
+  else{
+
+    question.value = newQuestion.data.value[0]
+    showAnswer.value = false;
+  }
+
+}
+
   
 </script>
 
 <template>
     <navbar></navbar>
+<a href="/startQuiz">
+  <button
+              class="px-12 py-4 bg-white text-indigo-800 text-lg rounded-lg  transition w-full md:w-1/3"
+            >
+              Zurück zur Themensauswahl
+            </button>
+</a>
     <div
       class="grid grid-rows-6 grid-cols-1 text-gray-600 mx-auto w-11/12 md:w-8/12 lg:w-7/12 overflow-y-hidden custom-height"
-    >
+    > 
       <div class="row-span-2">
         <div
           class="min-h-full items-center justify-between py-4 rounded-lg flex flex-col items-center"
@@ -42,7 +65,7 @@ import { ref, onMounted } from 'vue';
             <h1
               class="text-center font-medium md:text-lg"
               
-            >{{question?.question}}</h1>
+            >{{question?.question}} {{ q.error ? q.error : "" }}</h1>
           </div>
         </div>
       </div>
@@ -66,10 +89,12 @@ import { ref, onMounted } from 'vue';
         </div>
       </div>
       <div class="">
-        <div class="min-h-full min-w-full flex items-center justify-center">
+        <div class="min-h-full min-w-full flex items-center justify-center flex-col">
+          <p class="m-2" v-show="showAnswer">{{ question?.feedback }}</p>
           <Transition name="grow-fade">
+           
             <button
-              @click="console.log(null)"
+              @click="nextQuestion()"
               class="px-12 py-4 bg-gray-600 text-white text-lg rounded-lg hover:bg-gray-700 transition w-full md:w-1/3"
               v-show="showAnswer"
             >

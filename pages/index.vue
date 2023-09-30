@@ -16,10 +16,12 @@ import navbar from './components/navbar.vue';
     </div>
     <div class="flex flex-col md:flex-row items-center align-center">
       <div class="text-center basis-1/3 p-6 w-full">
-        <button class="flex items-center p-6 text-purple-100 rounded bg-gradient-to-r from-indigo-300 to-indigo-500 justify-center w-full">
-          <img src="/assets/create_icon.png" class="mr-3 h-14" alt="Create Icon" />
-          <p class="text-white text-3xl font-bold">Erstelle ein Quiz</p>
-        </button>
+        <a href="/createQuiz">
+          <button class="flex items-center p-6 text-purple-100 rounded bg-gradient-to-r from-indigo-300 to-indigo-500 justify-center w-full">
+            <img src="/assets/create_icon.png" class="mr-3 h-14" alt="Create Icon" />
+            <p class="text-white text-3xl font-bold">Erstelle ein Quizfrage</p>
+          </button>
+        </a>
       </div>
       <div class="text-center basis-1/3 p-6 w-full">
         <button class="flex items-center p-6 text-purple-100 rounded bg-gradient-to-r from-indigo-300 to-indigo-500 justify-center w-full">

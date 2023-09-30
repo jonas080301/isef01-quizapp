@@ -1,4 +1,4 @@
-export const useShowAnswer = () => useState<Boolean>('answer', () => false)
-export const useQuizEnded = () => useState<Boolean>('quizEnded', () => false)
-export const useScore = () => useState<Number>('score', () => 0)
-export const useSubject = () => useState<Number>('subject', () => 0)
+export const useShowAnswer = () => useState<boolean>('answer', () => false)
+export const useQuizEnded = () => useState<boolean>('quizEnded', () => false)
+export const useScore = () => useState<number>('score', () => 0)
+export const useSubject = () => useState<number>('subject', () => 0)

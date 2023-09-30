@@ -33,6 +33,7 @@
     "superjson": "^1.12.2",
     "trpc-nuxt": "^0.7.0",
     "uuid": "^9.0.1",
+    "vue-toastification": "^2.0.0-rc.5",
     "zod": "^3.21.2"
   }
 }
