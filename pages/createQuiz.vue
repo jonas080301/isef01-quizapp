@@ -15,9 +15,7 @@ import {
   // @ts-ignore
 } from '@headlessui/vue'
 import navbar from './components/navbar.vue'
-import { useToast } from "vue-toastification";
-
-const toast = useToast();
+const { $toast } = useNuxtApp();
 
 
 
@@ -65,10 +63,10 @@ const createQuiz = async () => {
         })
         console.log(responseData)
         if(responseData.value){
-            toast.success("Quizfrage erfolgreich erstellt!")
+            $toast.success("Quizfrage erfolgreich erstellt!")
         }
         else{
-            toast.error("Fehler beim Erstellen der Quizfrage!")
+            $toast.error("Fehler beim Erstellen der Quizfrage!")
             Question.value = {
                 question: "",
                 feedback: "",
@@ -80,7 +78,7 @@ const createQuiz = async () => {
         }
     }
     else{
-        toast.error("Bitte eingaben prüfen! Es sind mindestens zwei Antwortmöglichkeiten anzugeben!")
+        $toast.error("Bitte eingaben prüfen! Es sind mindestens zwei Antwortmöglichkeiten anzugeben!")
     }
 
 }

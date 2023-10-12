@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   modules: [
     '@sidebase/nuxt-auth',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    
   ],
   build: {
     transpile: [
@@ -20,8 +21,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     mongoUrl: process.env.MONGO_URL
   },
+  plugins:[{ src: '~/plugins/toast.ts', mode: 'client' }],
   nitro: {
-    plugins: ['~/server/index.ts']
+    plugins: ['~/server/index.ts',]
   }
 
 })
