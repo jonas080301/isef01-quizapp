@@ -1,9 +1,100 @@
-<mxfile host="app.diagrams.net" modified="2023-10-19T10:54:57.812Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" version="22.0.5" etag="nhgNwxcngjKPGiSHQIHl" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-19T11:45:03.346Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="QD-uRZd26HmvEPOowAHJ" version="22.0.5" type="github">
   <diagram name="Seite-1" id="mfS15Rv57rC7b_CC2Yrc">
-    <mxGraphModel>
+    <mxGraphModel dx="2074" dy="1150" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-1" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; margin-left: 10px ; text-align: left&quot;&gt;&lt;b&gt;ISEF01 Quizapp Container-Diagram&lt;/b&gt;&lt;/p&gt;" style="html=1;strokeWidth=1;shape=mxgraph.sysml.package;html=1;overflow=fill;whiteSpace=wrap;fillColor=none;gradientColor=none;fontSize=12;align=center;labelX=327.64;" vertex="1" parent="1">
+          <mxGeometry x="240" y="210" width="1020" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-2" value="Anwender" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="550" width="60" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-4" value="&lt;p&gt;&amp;lt;&amp;lt;Container: Vercel&amp;gt;&amp;gt;&lt;/p&gt;&lt;p&gt;Nuxt 3 Application&lt;br&gt;&lt;br&gt;Entwickelte Quiz-Anwendung&amp;nbsp;&lt;/p&gt;" style="shape=rect;html=1;overflow=fill;whiteSpace=wrap;align=center;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="320" y="330" width="170" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-6" value="&lt;p&gt;&amp;lt;&amp;lt;Container: MongoDB&amp;gt;&amp;gt;&lt;/p&gt;&lt;p&gt;MongoDB Atlas&lt;br&gt;&lt;br&gt;Stellt Zugriff auf MongoDB Datenbank sicher&lt;/p&gt;" style="shape=rect;html=1;overflow=fill;whiteSpace=wrap;align=center;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="860" y="330" width="170" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-7" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;dashPattern=8 8;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="0U1JFNzKZc5yWgwQZ5E_-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="610" as="sourcePoint" />
+            <mxPoint x="140" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-8" value="Uses&lt;br&gt;[HTTPS]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="0U1JFNzKZc5yWgwQZ5E_-7">
+          <mxGeometry x="-0.3083" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-9" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;dashPattern=8 8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" target="0U1JFNzKZc5yWgwQZ5E_-6" source="0U1JFNzKZc5yWgwQZ5E_-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="380" as="sourcePoint" />
+            <mxPoint x="690" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-10" value="Read &amp;amp; Write Data&lt;br&gt;[wire]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="0U1JFNzKZc5yWgwQZ5E_-9">
+          <mxGeometry x="-0.3083" relative="1" as="geometry">
+            <mxPoint x="20" y="-24" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-11" value="&lt;p&gt;&amp;lt;&amp;lt;Container: Vercel&amp;gt;&amp;gt;&lt;/p&gt;&lt;p&gt;Single-Page Application&lt;br&gt;&lt;br&gt;Vue 3 Frontend, stellt alle Funktionalitäten für das Erstellen und Teilnehmen an Quiz bereit&lt;/p&gt;" style="shape=rect;html=1;overflow=fill;whiteSpace=wrap;align=center;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="315.5" y="550" width="179" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-12" value="&lt;p&gt;&amp;lt;&amp;lt;Container: Vercel&amp;gt;&amp;gt;&lt;/p&gt;&lt;p&gt;Backend&lt;br&gt;&lt;br&gt;Nuxt 3 API Backend inkl. Authentifizierung, Autorisierung&lt;/p&gt;" style="shape=rect;html=1;overflow=fill;whiteSpace=wrap;align=center;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="651" y="550" width="179" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-13" value="&lt;b&gt;MognoDB&lt;/b&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="410" width="115" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-14" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;dashPattern=8 8;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="0U1JFNzKZc5yWgwQZ5E_-4" target="0U1JFNzKZc5yWgwQZ5E_-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="390" as="sourcePoint" />
+            <mxPoint x="870" y="394" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="406" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-16" value="Delivers" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="0U1JFNzKZc5yWgwQZ5E_-14">
+          <mxGeometry x="-0.3009" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-17" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;dashPattern=8 8;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="0U1JFNzKZc5yWgwQZ5E_-4" target="0U1JFNzKZc5yWgwQZ5E_-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="415" y="450" as="sourcePoint" />
+            <mxPoint x="415" y="560" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-18" value="Delivers" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="0U1JFNzKZc5yWgwQZ5E_-17">
+          <mxGeometry x="-0.3009" y="-3" relative="1" as="geometry">
+            <mxPoint x="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-19" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;dashPattern=8 8;" edge="1" parent="1" target="0U1JFNzKZc5yWgwQZ5E_-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="620" as="sourcePoint" />
+            <mxPoint x="330" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-20" value="Uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="0U1JFNzKZc5yWgwQZ5E_-19">
+          <mxGeometry x="-0.3083" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-21" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;dashPattern=8 8;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="616.5" as="sourcePoint" />
+            <mxPoint x="650" y="617" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0U1JFNzKZc5yWgwQZ5E_-22" value="Uses&lt;br&gt;[HTTPS]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="0U1JFNzKZc5yWgwQZ5E_-21">
+          <mxGeometry x="-0.3083" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
