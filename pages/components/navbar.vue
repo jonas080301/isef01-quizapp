@@ -60,7 +60,7 @@ const {
       >
         <a href="/" class="text-gray-100 hover:text-indigo-400">Home</a>
         <a href="/startQuiz" class="text-gray-100 hover:text-indigo-400">Solo-Quiz</a>
-        <a href="/" class="text-gray-100 hover:text-indigo-400">Duo-Quiz</a>
+        <a href="/" class="text-gray-100 hover:text-indigo-400">Competetive-Quiz</a>
         <!-- <a v-if="(data as any).admin == '1'" href="/admin" class="text-gray-100 hover:text-indigo-400">Profil</a> -->
         <a class="text-gray-100 hover:text-indigo-400" @click="signOut()">Abmelden</a>
       </ul>
