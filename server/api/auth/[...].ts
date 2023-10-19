@@ -16,8 +16,8 @@ export default NuxtAuthHandler({
       // e.g. domain, username, password, 2FA token, etc.
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
-        username: { label: 'Username', type: 'text', placeholder: '(Tipp: jonas)' },
-        password: { label: 'Password', type: 'password', placeholder: '(Tipp: karl)' }
+        username: { label: 'Username', type: 'text', placeholder: '(Tipp: jonas.karl@iu-study.org)' },
+        password: { label: 'Password', type: 'password', placeholder: '(Tipp: passwort)' }
       },
       authorize (credentials: any) {
         console.warn('ATTENTION: You should replace this with your real providers or credential provider logic! The current setup is not safe')
@@ -26,9 +26,16 @@ export default NuxtAuthHandler({
         // that is false/null if the credentials are invalid.
         // NOTE: THE BELOW LOGIC IS NOT SAFE OR PROPER FOR AUTHENTICATION!
 
-        const user = { id: '1', name: 'Jonas Karl', username: 'jonas', password: 'karl' }
+        //Hardcoded for demo purpose
+        const allowedMails = ["iu-study.org", "iubh.de"]
 
-        if (credentials?.username === user.username && credentials?.password === user.password) {
+        const user = { id: '1', name: 'Jonas Karl', username: 'jonas.karl@iu-study.org', password: 'passwort' }
+
+        if(!allowedMails.includes(credentials.username.split("@")[1])){
+          console.log('Not IU Mail - Access Denied')
+          return null;
+        }
+        if (credentials?.username.toLowerCase() === user.username && credentials?.password === user.password) {
           // Any object returned will be saved in `user` property of the JWT
           return user
         } else {
