@@ -24,10 +24,12 @@ import navbar from './components/navbar.vue';
         </a>
       </div>
       <div class="text-center basis-1/3 p-6 w-full">
-        <button class="flex items-center p-6 text-purple-100 rounded bg-gradient-to-r from-indigo-300 to-indigo-500 justify-center w-full">
+        <a href="/compQuiz">
+          <button class="flex items-center p-6 text-purple-100 rounded bg-gradient-to-r from-indigo-300 to-indigo-500 justify-center w-full">
           <img src="/assets/play_icon.png" class="mr-3 h-14" alt="Create Icon" />
           <p class="text-white text-3xl font-bold">Competetive Modus</p>
         </button>
+        </a>
       </div>
       <div class="text-center basis-1/3 p-6 w-full">
         <a href="/startQuiz">
